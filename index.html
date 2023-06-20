@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Object Detection</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    #video-container {
+      max-width: 800px;
+    }
+    button[type="button"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="video-container">
+    <img id="captured-image" src="{{ url_for('video_feed') }}" alt="Captured Image" />
+  </div>
+
+  <button type="button" onclick="redirectToSearch()">Go to Search</button>
+
+  <script>
+    function redirectToSearch() {
+      
+      window.location.href = '/search';
+    }
+  </script>
+</body>
+</html>
